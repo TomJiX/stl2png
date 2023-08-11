@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>STL2PNG - javascript edition</title>
+    <link rel="stylesheet" type="text/css" href="STL2PNG%20-%20javascript%20edition_files/stl2png.css">
+</head>
+<body>
+    <div valign="top" style="font-family: Arial;">
+        <h1>STL2PNG Converter</h1>
+        <p>
+            This website lets you convert STL files to PNG heightmap images.
+        </p>
+        <p>
+            All computation happens local
+            and inside your browser, no information is uploaded or sent
+            over the internet. For large files this can take 10+ seconds before the
+            results show up.
+        </p>
+        <div id="orient">
+            <br>
+            Resolution:<br>
+            <input type="text" value="1024" onchange="SideB(this.value)"> pixels
+            <br><br>
+            Depth offset:<br>
+            <input type="text" value="0" onchange="OffsetB(this.value)"> percent
+            <br>
+            Correction function coeff:<br>
+            <input type="text" value="-0.97499805" id="coeff1"><input type="text" value="7.17054653" id="coeff2"> <button id="update" onclick="set_F_coeff(document.getElementById('coeff1').value,document.getElementById('coeff2').value)">Update</button>
+            
+            <br>
+        </div>
+        <div>
+            <br>
+            <form>
+                <input type="file" id="files" name="files[]">
+                <output id="list"></output>
+            </form>
+
+            <br>
+            <hr>
+            <div id="Progress">
+                <div id="Bar" style="width: 100%;"></div>
+            </div>
+            <hr>
+
+            <a href="data:image/png;base64," id="download" download="test2.png">download image test2.png</a>
+            
+        </div>
+        <div width="100%">
+            <canvas id="canvas" width="1024" height="693"></canvas>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="STL2PNG%20-%20javascript%20edition_files/stl2png.js"></script>
+
+
+</body></html>
